@@ -3,10 +3,10 @@
     <table class="table table-striped">
       <thead class="thead-light">
         <tr>
-          <th scope="col">No</th>
-          <th scope="col">Nama</th>
-          <th scope="col">Email</th>
-          <th scope="col">Alamat</th>
+          <th class="cursor-pointer" scope="col" @click="sortId('id')">No</th>
+          <th class="cursor-pointer" scope="col" @click="sortName('name')">Nama</th>
+          <th class="cursor-pointer" scope="col" @click="sortEmail('email')">Email</th>
+          <th class="cursor-pointer" scope="col" @click="sortAddress('address')">Alamat</th>
         </tr>
       </thead>
       <tbody>
@@ -69,7 +69,7 @@
 export default {
   name: 'customer-table',
   props: {
-    customers: []
+    customers: [],
   },
   data () {
     return {
@@ -101,7 +101,27 @@ export default {
     deleteCustomer(id){
       this.$emit('delete-customer', id);
       console.log('delete', id)
-    }
+    },
+
+    sortId(id) {
+      this.$emit('sort-no', id);
+    },
+    sortName(name) {
+      this.$emit('sort-name', name);
+    },
+    sortEmail(email) {
+      this.$emit('sort-email', email);
+    },
+    sortAddress(address) {
+      this.$emit('sort-address', address);
+    },
   }
 }
 </script>
+
+<style scoped>
+.cursor-pointer {
+  cursor: pointer;
+}
+</style>
+
