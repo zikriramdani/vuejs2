@@ -26,7 +26,7 @@
           @sort-address="sort('address')"
         />
         debug: sort={{currentSort}}, dir={{currentSortDir}}, page={{currentPage}}
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center mb-3">
           <button @click="prevPage()">Previous</button> 
           <button @click="nextPage()">Next</button>
         </div>
