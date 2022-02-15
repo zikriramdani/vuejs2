@@ -1,5 +1,7 @@
 # vue-crud
 
+[demo](https://vuejs2.netlify.app/)
+
 ## Project setup
 ```
 npm install
